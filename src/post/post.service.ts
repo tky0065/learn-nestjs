@@ -13,7 +13,13 @@ export class PostService {
   findAll() {
     return this.prisma.post.findMany();
   }
-
+  // async findPage() {
+  //   return await findManyCursorConnection(
+  //     (args) => this.prisma.post.findMany(args),
+  //     () => this.prisma.post.count(),
+  //     {},
+  //   );
+  // }
   findOne(id: number) {
     return this.prisma.post.findUnique({ where: { id: id } });
   }
